@@ -21,15 +21,19 @@ public final class ColorDialog extends javax.swing.JDialog {
         for (int i = 0; i < 5; i++) {
             Container pane = getContentPane();
             pane.setLayout(null);
-            JButton colorButton = new JButton();
-            colorButton.setBackground(arrayColors[i]);
-            colorButton.setSize(50, 50);
-            colorButton.setLocation(50 * i, 50);
+            JButton colorButton = createButton(i, arrayColors[i]);
             setListener(colorButton, parentButton);
             pane.add(colorButton);
 
         }
 
+    }
+    private JButton createButton(int i, Color color){
+        JButton colorButton = new JButton();
+        colorButton.setBackground(color);
+        colorButton.setSize(50, 50);
+        colorButton.setLocation(50 * i, 50);
+        return colorButton;
     }
     private void setListener(JButton button, JButton parentButton){
         button.addActionListener((ActionEvent e) -> {
