@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JButton;
 
 public final class ColorDialog extends javax.swing.JDialog {
+    private final int BUTTON_SIZE = 50;
 
     public ColorDialog(java.awt.Frame parent, boolean modal, JButton parentButton) {
         super(parent, modal);
@@ -31,8 +32,8 @@ public final class ColorDialog extends javax.swing.JDialog {
     private JButton createButton(int i, Color color){
         JButton colorButton = new JButton();
         colorButton.setBackground(color);
-        colorButton.setSize(50, 50);
-        colorButton.setLocation(50 * i, 50);
+        colorButton.setSize(BUTTON_SIZE, BUTTON_SIZE);
+        colorButton.setLocation(BUTTON_SIZE * i, BUTTON_SIZE);
         return colorButton;
     }
     private void setListener(JButton button, JButton parentButton){
